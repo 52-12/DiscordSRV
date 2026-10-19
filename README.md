@@ -83,17 +83,3 @@ Additional controls:
 The Paper API pinned by this repo (`paperVersion` in `gradle.properties`) is compiled for Java 25,
 so a JDK 25 is required to build (`./gradlew shadowJar`). The shaded plugin jar is written to
 `build/libs/`.
-
-## Thanks to:
-<table>
-    <tr>
-        <td align="center" width="50%">
-            <a href="https://www.jetbrains.com/idea/"><img src="https://resources.jetbrains.com/storage/products/company/brand/logos/jetbrains.svg" alt="Jetbrains" width="400px"></a>
-            <p><strong>IntelliJ IDEA - The Leading Java and Kotlin IDE</strong></p>
-        </td>
-        <td align="center" width="50%">
-            <a href="http://www.ej-technologies.com/products/jprofiler/overview.html"><img src="https://www.ej-technologies.com/images/product_banners/jprofiler_large.png" alt="JProfiler" width="150px"></img></a>
-            <p><strong>JProfiler's intuitive UI helps you resolve performance bottlenecks, pin down memory leaks and understand threading issues.</strong></p>
-        </td>
-    </tr>
-</table>
