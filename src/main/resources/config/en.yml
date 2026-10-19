@@ -83,10 +83,12 @@ MinecraftMentionSound: true
 # VentureChatBungee: enables the VentureChat hook's BungeeCord functionality (messages are received from every server, requires atleast 1 player to be online)
 # EnablePresenceInformation: enabled presence information, which is required for some of our PlaceholderAPI placeholders. Keep in mind this requires the "Presence Intent" from the Discord developer portal
 # UseModernPaperChatEvent: only use this if you have a chat plugins that SPECIFICALLY utilizes Paper's "AsyncChatEvent"
+# MinehutFilterRespectBlockedMessages: whether messages blocked by the MinehutFilter plugin (https://minehut.com/) should also be prevented from being sent to Discord
 DisabledPluginHooks: []
 VentureChatBungee: false
 EnablePresenceInformation: false
 UseModernPaperChatEvent: false
+MinehutFilterRespectBlockedMessages: true
 
 # Game Information
 # Sets the user status for the bot
