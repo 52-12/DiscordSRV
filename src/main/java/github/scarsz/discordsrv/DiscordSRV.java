@@ -1745,8 +1745,15 @@ public class DiscordSRV extends JavaPlugin {
         boolean blacklist = config.getBoolean("DiscordChatChannelPrefixActsAsBlacklist");
 
         String legacy = MessageUtil.toLegacy(message);
-        if (MessageUtil.strip(legacy).startsWith(prefix) == blacklist) {
+        String plainMessage = MessageUtil.strip(legacy);
+        if (plainMessage.startsWith(prefix) == blacklist) {
             debug(Debug.MINECRAFT_TO_DISCORD, "User " + player.getName() + " sent a message but it was not delivered to Discord because " + (blacklist ? "the message started with \"" + prefix : "the message didn't start with \"" + prefix) + "\" (DiscordChatChannelPrefixRequiredToProcessMessage): \"" + message + "\"");
+            return;
+        }
+
+        // return if MinehutFilter blocked the message
+        if (config().getBooleanElse("MinehutFilterRespectBlockedMessages", true) && MinehutFilterUtil.isMessageBlocked(player, plainMessage)) {
+            debug(Debug.MINECRAFT_TO_DISCORD, "User " + player.getName() + " sent a message but it was not delivered to Discord because MinehutFilter blocked it");
             return;
         }
 
